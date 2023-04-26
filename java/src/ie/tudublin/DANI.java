@@ -1,13 +1,12 @@
 package ie.tudublin;
 
-import java.lang.annotation.Target;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
 
 public class DANI extends PApplet {
 
-	
+	ArrayList<Word>hitandhope =new ArrayList<Word>();
 
 	public void settings() {
 		size(1000, 1000);
@@ -24,6 +23,7 @@ public class DANI extends PApplet {
 	public void setup() {
 		colorMode(HSB);
 		loadFile();
+		draw();
        
 	}
 
@@ -36,34 +36,60 @@ public class DANI extends PApplet {
                 word= word.toLowerCase();
                 //System.out.print(word + " ");
 				Word w= new Word(word);
+				Word fWord = findWord(word);
+				if (fWord == null) {
+					Word newWord = new Word(word);
+					hitandhope.add(newWord);
+				}
 				//follows.add(word);
-				printModel(words);
+				//printModel(hitandhope);
+				//printModel(words);
+				printModel();
+				
 
             }
             //System.out.println();
         }
 	
 	}
-	/*public boolean findWord(String[] str){
-		for(String word: str){
-			if(str == word[]){
-				return false;
 
+
+
+	public Word findWord(String word) {
+		for (Word w : hitandhope) {
+			if (w.getWord().equals(word)) {
+				return w;
 			}
 		}
-		return true;
-	}*/
-	public void printModel(String[] words){
+		return null;
+	}
+
+	/*public void printModel(String[] words){
 		for (String word:words) {
 			System.out.print(word+" "+"\n");
 		}
-	}
+		for (Word word : hitandhope) {
+			println(word);
+		}
+	}*/
+
+	
+    public void printModel() {
+        for (Word word : hitandhope) {
+            println(word);
+        }
+    }
 
 	public void keyPressed() {
-
+		writeSonnet();
 	}
 
 	float off = 0;
+
+	/*public writeSonnet(){
+
+	}*/
+
 
 	public void draw() 
     {
@@ -72,9 +98,8 @@ public class DANI extends PApplet {
 		noStroke();
 		textSize(20);
         textAlign(CENTER, CENTER);
+		//text(words)
         
 	}
 }
-
-
 

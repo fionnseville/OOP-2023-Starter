@@ -1,7 +1,5 @@
 package ie.tudublin;
 
-import javax.swing.text.TableView.TableRow;
-
 public class Follow {
     public String word;
     public int count;
@@ -22,13 +20,10 @@ public class Follow {
     public void setCount(int count) {
         this.count = count;
     }
-    /*public Follow(TableRow tr) {
-        this();
-    }
     @Override
     public String toString(){
-        return ;
-    }*/
+        return  word+" ("  +count+  ") ";
+    }
     
 }
 

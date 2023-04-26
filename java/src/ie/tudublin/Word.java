@@ -25,8 +25,8 @@ public class Word {
     }
     
 
-    /*public String toString(){
-        return;
-    }*/
+    public String toString(){
+        return word+"not yet";
+    }
     
 }
