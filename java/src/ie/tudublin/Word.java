@@ -18,9 +18,9 @@ public class Word {
         this.follows = follows;
     }
 
-    public Word(String word,ArrayList follows){
+    public Word(String word){
         this.word=word;
-        this.follows=follows;
+        
 
     }
     

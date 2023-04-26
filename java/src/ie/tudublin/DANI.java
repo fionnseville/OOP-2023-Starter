@@ -32,38 +32,32 @@ public class DANI extends PApplet {
 		for (String line : lines) {
             String[] words = split(line, ' ');
             for (String word : words) {
-                w= word.replaceAll("[^\\w\\s]", ""); 
-                w= word.toLowerCase();
-                System.out.print(word + " ");
-				Word word= new Word(w);
+                word= word.replaceAll("[^\\w\\s]", ""); 
+                word= word.toLowerCase();
+                //System.out.print(word + " ");
+				Word w= new Word(word);
+				//follows.add(word);
+				printModel(words);
 
             }
             //System.out.println();
         }
-		/*for (int i = 0; i < lines.length; i++) {
-			String line = lines[i];
-			split(line,' ');
-			line = lines[i].replaceAll("[^\\w\\s]","");
-			line=lines[i].toLowerCase();
-			System.out.print(line);
-		}*/
 	
 	}
-	public void findWord(String str){
-		for(String w:words){
-			if(str == w){
+	/*public boolean findWord(String[] str){
+		for(String word: str){
+			if(str == word[]){
 				return false;
 
 			}
 		}
 		return true;
-	}
-	/*public void printModel(){
-		for (int i = 0; i < lines.size(); i++) {
-			
-		}
 	}*/
-
+	public void printModel(String[] words){
+		for (String word:words) {
+			System.out.print(word+" "+"\n");
+		}
+	}
 
 	public void keyPressed() {
 
