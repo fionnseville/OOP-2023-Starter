@@ -26,6 +26,22 @@ public class DANI extends PApplet {
        
 	}
 
+	public void loadFile(){
+		String[] lines = loadStrings("small.txt");
+		for(String line)
+
+	}
+
+	/* 
+
+	private void loadResistors(){
+		Table t = loadTable("resistors.csv");
+		for(TableRow row:t.rows()){
+			resistors.add(new Resistor(this, row.getInt(0)));
+		}
+	}*/
+
+
 	public void keyPressed() {
 
 	}
