@@ -22,12 +22,13 @@ public class Follow {
     public void setCount(int count) {
         this.count = count;
     }
-    public Follow(TableRow tr) {
-        this(tr.getString("word"),tr.getint);
+    /*public Follow(TableRow tr) {
+        this();
     }
-
+    @Override
     public String toString(){
-        return this.r+", "+this.g+", "+this.b;
-    }
+        return ;
+    }*/
     
 }
+

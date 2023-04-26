@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
@@ -22,22 +23,44 @@ public class DANI extends PApplet {
 
 	public void setup() {
 		colorMode(HSB);
-
+		loadFile();
        
 	}
 
 	public void loadFile(){
 		String[] lines = loadStrings("small.txt");
-		for(String line)
+		for (String line : lines) {
+            String[] words = split(line, ' ');
+            for (String word : words) {
+                w= word.replaceAll("[^\\w\\s]", ""); 
+                w= word.toLowerCase();
+                System.out.print(word + " ");
+				Word word= new Word(w);
 
+            }
+            //System.out.println();
+        }
+		/*for (int i = 0; i < lines.length; i++) {
+			String line = lines[i];
+			split(line,' ');
+			line = lines[i].replaceAll("[^\\w\\s]","");
+			line=lines[i].toLowerCase();
+			System.out.print(line);
+		}*/
+	
 	}
+	public void findWord(String str){
+		for(String w:words){
+			if(str == w){
+				return false;
 
-	/* 
-
-	private void loadResistors(){
-		Table t = loadTable("resistors.csv");
-		for(TableRow row:t.rows()){
-			resistors.add(new Resistor(this, row.getInt(0)));
+			}
+		}
+		return true;
+	}
+	/*public void printModel(){
+		for (int i = 0; i < lines.size(); i++) {
+			
 		}
 	}*/
 
@@ -58,3 +81,6 @@ public class DANI extends PApplet {
         
 	}
 }
+
+
+
