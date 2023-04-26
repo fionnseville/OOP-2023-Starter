@@ -8,7 +8,7 @@ public class Word {
     public String getWord() {
         return word;
     }
-    public void setWord2(String word) {
+    public void setWord(String word) {
         this.word = word;
     }
     public ArrayList<Follow> getFollows() {

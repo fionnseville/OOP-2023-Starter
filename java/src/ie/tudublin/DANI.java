@@ -15,10 +15,7 @@ public class DANI extends PApplet {
 
     String[] sonnet;
 
-    public String[] writeSonnet()
-    {
-        return null;
-    }
+    
 
 	public void setup() {
 		colorMode(HSB);
@@ -28,7 +25,7 @@ public class DANI extends PApplet {
 	}
 
 	public void loadFile(){
-		String[] lines = loadStrings("small.txt");
+		String[] lines = loadStrings("shakespere.txt");
 		for (String line : lines) {
             String[] words = split(line, ' ');
             for (String word : words) {
@@ -59,6 +56,7 @@ public class DANI extends PApplet {
 		for (Word w : hitandhope) {
 			if (w.getWord().equals(word)) {
 				return w;
+				//int count=getCount();
 			}
 		}
 		return null;
@@ -81,24 +79,38 @@ public class DANI extends PApplet {
     }
 
 	public void keyPressed() {
-		writeSonnet();
+		//writeSonnet();
 	}
 
-	float off = 0;
+	float off = 200;
 
-	/*public writeSonnet(){
+	/*public String[] writeSonnet(){
 
+		/*for(Word word :hitandhope){
+			draw();
+		}
+
+		for (int i = 0; i < 14; i++) {
+			draw(i);
+		}
+		return ;
 	}*/
 
 
-	public void draw() 
+	public void draw(int i) 
     {
 		background(0);
 		fill(255);
 		noStroke();
 		textSize(20);
         textAlign(CENTER, CENTER);
-		//text(words)
+		/*for(Word word:hitandhope){
+			float x=PApplet.map(word,off ,height/2 , width-off , height/2);
+			//text(word,0, 0, 0, 0);
+			text(word, 0, 0, 0, 0);
+		}*/
+		text("From fairest creatures we desire increase,", 0, 0, 0, 0);
+		
         
 	}
 }
